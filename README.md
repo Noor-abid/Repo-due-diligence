@@ -206,3 +206,9 @@ the fix, `verification_passed` returned `true` for all 10 repos in the final
 run — confirming the fix resolved the issue at its root, not just for the 
 one repo where it was first noticed. AI-based fact-checking and tool-level 
 debugging are complementary, not substitutes for each other.
+
+**Third, smaller observation:** the flask-mail trap case (see Changelog)
+shows the same pattern from a different angle — the baseline's high
+correlation partly comes from trusting surface polish (modern tooling,
+ecosystem branding) as a quality proxy, the same failure mode that made it
+score famous repos a reflexive 9 or 10.
