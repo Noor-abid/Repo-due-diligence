@@ -23,3 +23,6 @@ Our agent pipeline, by contrast, produced varied, evidence-grounded scores (3 to
 **The deeper lesson:** a single ranking-correlation number can reward a lazy, non-discriminating baseline over a genuinely more rigorous system. Anyone evaluating agent-based tools against simple baselines should look past aggregate correlation alone and inspect *why* the scores differ — a system that's "wrong" relative to a noisy human prior may still be extracting more real signal than one that's "right" by coincidence.
 
 **Second, smaller lesson:** verification steps need to be paired with root-cause debugging, not just flagging. Our Synthesis Agent's verification pass correctly caught a false claim (requests wasn't "4 years inactive"), but catching the error alone wasn't enough — tracing it back to a specific git-timestamp parsing bug (tied to a known quirk in requests' own commit history) required engineering-level debugging beneath the LLM layer. After the fix, `verification_passed` returned `true` for all 10 repos in the final run — confirming the fix resolved the issue at its root, not just for the one repo where it was first noticed. AI-based fact-checking and tool-level debugging are complementary, not substitutes for each other.
+
+## Bug Fix
+![Before/after bug fix](./bug_fix_terminal.png)
