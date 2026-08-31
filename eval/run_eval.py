@@ -6,7 +6,7 @@ Runs the baseline AND the full agent pipeline on the same set of repos
 your human ranking using Spearman rank correlation.
 
 Usage:
-    export ANTHROPIC_API_KEY=sk-...
+    export GEMINI_API_KEY=your-key-here
     python eval/run_eval.py
 
 Outputs:
