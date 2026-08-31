@@ -1,0 +1,14 @@
+{
+  "repos":[ 
+  {"repo_name": "requests", "repo_url": "https://github.com/psf/requests", "human_rank": 2, "is_trap": false},
+  {"repo_name": "flask", "repo_url": "https://github.com/pallets/flask", "human_rank": 6, "is_trap": false}, 
+  {"repo_name": "django", "repo_url": "https://github.com/django/django", "human_rank": 1, "is_trap": false},
+  {"repo_name": "express", "repo_url": "https://github.com/expressjs/express", "human_rank": 4, "is_trap": false},
+  {"repo_name": "lodash", "repo_url": "https://github.com/lodash/lodash", "human_rank": 7, "is_trap": false},
+  {"repo_name": "moment", "repo_url": "https://github.com/moment/moment", "human_rank": 8, "is_trap": false},
+  {"repo_name": "request", "repo_url": "https://github.com/request/request", "human_rank": 10, "is_trap": false},
+  {"repo_name": "black", "repo_url": "https://github.com/psf/black", "human_rank": 3, "is_trap": false},
+  {"repo_name": "tqdm", "repo_url": "https://github.com/tqdm/tqdm", "human_rank": 5, "is_trap": false},
+  {"repo_name": "flask-mail", "repo_url": "https://github.com/pallets-eco/flask-mail", "human_rank": 9, "is_trap": true}
+] 
+}

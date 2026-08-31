@@ -1,0 +1,11 @@
+[
+  {
+    "step": "parse_dependency_manifest",
+    "source_file": "pyproject.toml",
+    "pinned_count": 0
+  },
+  {
+    "step": "check_pypi_staleness",
+    "stale_found": 0
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "node"
+  },
+  {
+    "step": "check_ci",
+    "result": false
+  },
+  {
+    "step": "npm_install",
+    "result": {
+      "cmd": "npm install --silent",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "npm_test",
+    "result": {
+      "cmd": "npm test --silent",
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "sh: standard: command not found\n",
+      "timed_out": false
+    }
+  }
+]

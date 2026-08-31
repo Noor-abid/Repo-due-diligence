@@ -1,0 +1,8 @@
+{
+  "quality_score": 10,
+  "reasoning": "This repository represents Express, the foundational and gold-standard web framework for Node.js, exhibiting world-class maturity, massive ecosystem adoption, clean project structure, and robust testing infrastructure. The codebase adheres strictly to best practices with clear documentation, professional maintenance workflows, and an active Technical Committee governance model.",
+  "recommendation": "buy",
+  "repo_name": "express",
+  "method": "baseline_single_prompt",
+  "runtime_sec": 3.4
+}

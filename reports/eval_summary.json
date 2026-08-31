@@ -1,0 +1,89 @@
+{
+  "n_repos": 10,
+  "baseline_spearman_vs_human": 0.83,
+  "agent_spearman_vs_human": 0.37,
+  "baseline_avg_runtime_sec": 3.5,
+  "agent_avg_runtime_sec": 26.1,
+  "per_repo": [
+    {
+      "repo_name": "requests",
+      "human_rank": 2,
+      "is_trap": false,
+      "baseline_score": 10,
+      "agent_score": 5,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "flask",
+      "human_rank": 6,
+      "is_trap": false,
+      "baseline_score": 10,
+      "agent_score": 7,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "django",
+      "human_rank": 1,
+      "is_trap": false,
+      "baseline_score": 10,
+      "agent_score": 7,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "express",
+      "human_rank": 4,
+      "is_trap": false,
+      "baseline_score": 10,
+      "agent_score": 8,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "lodash",
+      "human_rank": 7,
+      "is_trap": false,
+      "baseline_score": 9,
+      "agent_score": 7,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "moment",
+      "human_rank": 8,
+      "is_trap": false,
+      "baseline_score": 3,
+      "agent_score": 4,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "request",
+      "human_rank": 10,
+      "is_trap": false,
+      "baseline_score": 1,
+      "agent_score": 3,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "black",
+      "human_rank": 3,
+      "is_trap": false,
+      "baseline_score": 10,
+      "agent_score": 6,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "tqdm",
+      "human_rank": 5,
+      "is_trap": false,
+      "baseline_score": 10,
+      "agent_score": 6,
+      "agent_verification_passed": true
+    },
+    {
+      "repo_name": "flask-mail",
+      "human_rank": 9,
+      "is_trap": true,
+      "baseline_score": 9,
+      "agent_score": 7,
+      "agent_verification_passed": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "quality_score": 1,
+  "reasoning": "The repository clearly states in the README that the project was fully deprecated in February 2020 and receives no maintenance or new changes. Acquiring a deprecated library with zero active development is a massive security and technical debt liability.",
+  "recommendation": "walk away",
+  "repo_name": "request",
+  "method": "baseline_single_prompt",
+  "runtime_sec": 3.1
+}

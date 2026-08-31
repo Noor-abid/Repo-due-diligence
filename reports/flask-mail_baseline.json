@@ -1,0 +1,8 @@
+{
+  "quality_score": 9,
+  "reasoning": "The repository is exceptionally well-maintained, utilizing modern Python tooling such as pyproject.toml, uv.lock, pre-commit hooks, and a structured layout with dedicated docs, tests, and source directories. As part of the Pallets Community Ecosystem, it follows rigorous open-source standards and best practices. The presence of a clear changelog and standard licensing indicates high code maturity and low technical debt.",
+  "recommendation": "buy",
+  "repo_name": "flask-mail",
+  "method": "baseline_single_prompt",
+  "runtime_sec": 3.0
+}

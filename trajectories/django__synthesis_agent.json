@@ -1,0 +1,67 @@
+[
+  {
+    "step": "combine_findings",
+    "input": {
+      "code_and_tests": {
+        "project_type": "node",
+        "build": null,
+        "tests": {
+          "ran": true,
+          "passed": true,
+          "summary": "get > MapWidget.map_srid...OK\ngis.OLMapWidget > MapWidget.defaultCenter...OK\ngis.OLMapWidget > MapWidget.interactions...OK\ngis.OLMapWidget > MapWidget.clearFeatures...OK\ngis.OLMapWidget > MapWidget.multipolygon...OK\ngis.OLMapWidget > MapWidget.IsCollection...OK\ngis.OLMapWidget > MapWidget.layerBuilder.osm returns OSM layer...OK\ngis.OLMapWidget > MapWidget.layerBuilder.nasaWorldview returns XYZ layer...OK\ngis.OLMapWidget > MapWidget uses default OSM base layer when none specified...OK\ngis.OLMapWidget > MapWidget uses named base layer from layerBuilder...OK\ngis.OLMapWidget > MapWidget uses passed-in base layer object directly...OK\ngis.OLMapWidget > initMapWidgetInSection initializes widgets and skips _prefix_...OK\n\n>> 75 tests completed in 164ms, with 0 failed, 0 skipped, and 0 todo.\n\nDone.\n"
+        },
+        "has_ci": true,
+        "repo_name": "django"
+      },
+      "git_history": {
+        "repo_name": "django",
+        "total_commits": 27,
+        "unique_authors": 16,
+        "top_author_commit_share": 0.3,
+        "bus_factor_estimate": 2,
+        "last_commit_days_ago": 1,
+        "red_flag_commits_sample": [],
+        "red_flag_count": 0
+      },
+      "dependencies": {
+        "repo_name": "django",
+        "ecosystem": "npm",
+        "vulnerabilities": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 5,
+          "critical": 0,
+          "total": 5
+        },
+        "stale_packages": []
+      }
+    }
+  },
+  {
+    "step": "generate_draft_report",
+    "result": {
+      "quality_score": 7,
+      "recommendation": "renegotiate",
+      "summary": "This repository demonstrates active development with recent commits and a healthy contributor base spanning 16 authors, though it carries a low bus factor of 2. All 75 tests executed successfully with zero failures, and continuous integration is present. However, a dependency audit reveals 5 high-severity vulnerabilities in the npm ecosystem that require remediation before acquisition. Overall, the codebase is functionally sound but demands security updates.",
+      "key_risks": [
+        "Presence of 5 high-severity npm vulnerabilities in dependencies.",
+        "Low bus factor of 2 concentrated among 16 authors, with the top author holding 30% of commits."
+      ],
+      "requires_human_review": [
+        "Perform a security audit to resolve the 5 high-severity npm vulnerabilities."
+      ],
+      "repo_name": "django",
+      "method": "agent_pipeline",
+      "verification_passed": true
+    }
+  },
+  {
+    "step": "verify_report",
+    "result": {
+      "all_claims_supported": true,
+      "unsupported_claims": [],
+      "notes": "All claims in the report match the raw findings (75 tests passed, 0 failed, CI present, 16 authors, bus factor of 2, top author 30%, 5 high-severity vulnerabilities)."
+    }
+  }
+]

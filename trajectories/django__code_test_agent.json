@@ -1,0 +1,30 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "node"
+  },
+  {
+    "step": "check_ci",
+    "result": true
+  },
+  {
+    "step": "npm_install",
+    "result": {
+      "cmd": "npm install --silent",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "npm_test",
+    "result": {
+      "cmd": "npm test --silent",
+      "returncode": 0,
+      "stdout": ".OK\nadmin.core > String.strptime...OK\nadmin.sidebar: filter > filter by a model name...OK\nadmin.RelatedObjectLookups > dismissRelatedLookupPopup closes popup window...OK\nadmin.RelatedObjectLookups > dismissRelatedLookupPopup removes window from relatedWindows array...OK\nadmin.RelatedObjectLookups > dismissRelatedLookupPopup triggers change event for single value field...OK\nadmin.RelatedObjectLookups > dismissRelatedLookupPopup triggers change event for many-to-many field...OK\nadmin.DateTimeShortcuts > init...OK\nadmin.DateTimeShortcuts > custom time shortcuts...OK\nadmin.DateTimeShortcuts > time zone offset warning - single field...OK\nadmin.DateTimeShortcuts > time zone offset warning - date and time field...OK\nadmin.DateTimeShortcuts > update aria labels - previous and next months...OK\nadmin.DateTimeShortcuts > today link has aria-label with current date...OK\nadmin.DateTimeShortcuts > calendar today highlight with server offset...OK\nadmin.actions > check...OK\nadmin.SelectBox > init: no options...OK\nadmin.SelectBox > filter...OK\nadmin.SelectBox > preserve scroll position...OK\nadmin.SelectBox > retain optgroups...OK\nadmin.SelectBox > sort optgroups...OK\nadmin.SelectBox > do not sort when no optgroups...OK\nadmin.SelectBox > move with optgroups sorts...OK\nadmin.SelectBox > move without optgroups does not sort...OK\nadmin.SelectBox > move_all with optgroups sorts...OK\nadmin.SelectBox > move_all without optgroups does not sort...OK\nadmin.SelectFilter2 > init...OK\nadmin.SelectFilter2 > filtering available options...OK\nadmin.SelectFilter2 > filtering selected options...OK\nadmin.SelectFilter2 > filtering available options to nothing...OK\nadmin.SelectFilter2 > filtering selected options to nothing...OK\nadmin.SelectFilter2 > selecting option...OK\nadmin.SelectFilter2 > deselecting option...OK\nadmin.inlines: tabular formsets > no forms...OK\nadmin.inlines: tabular formsets > add form...OK\nadmin.inlines: tabular formsets > added form has remove button...OK\nadmin.inlines: tabular formsets > add/remove form events...OK\nadmin.inlines: tabular formsets > existing add button...OK\nadmin.inlines: tabular formsets with validation errors > first form has delete checkbox and no button...OK\nadmin.inlines: tabular formsets with validation errors > dynamic form has remove button...OK\nadmin.inlines: tabular formsets with validation errors > dynamic template has nothing...OK\nadmin.inlines: tabular formsets with validation errors > removing a form-row also removed related row with non-field errors...OK\nadmin.inlines: tabular formsets with max_num > does not show the add button if already at max_num...OK\nadmin.inlines: tabular formsets with max_num > make addButton visible again...OK\nadmin.inlines: tabular formsets with min_num > does not show the remove buttons if already at min_num...OK\nadmin.inlines: tabular formsets with min_num > make removeButtons visible again...OK\nadmin.URLify > empty string...OK\nadmin.URLify > preserve nonessential words...OK\nadmin.URLify > strip non-URL characters...OK\nadmin.URLify > merge adjacent whitespace...OK\nadmin.URLify > trim trailing hyphens...OK\nadmin.URLify > non-ASCII string...OK\ngis.OLMapWidget > MapWidget.featureAdded...OK\ngis.OLMapWidget > MapWidget.map_srid...OK\ngis.OLMapWidget > MapWidget.defaultCenter...OK\ngis.OLMapWidget > MapWidget.interactions...OK\ngis.OLMapWidget > MapWidget.clearFeatures...OK\ngis.OLMapWidget > MapWidget.multipolygon...OK\ngis.OLMapWidget > MapWidget.IsCollection...OK\ngis.OLMapWidget > MapWidget.layerBuilder.osm returns OSM layer...OK\ngis.OLMapWidget > MapWidget.layerBuilder.nasaWorldview returns XYZ layer...OK\ngis.OLMapWidget > MapWidget uses default OSM base layer when none specified...OK\ngis.OLMapWidget > MapWidget uses named base layer from layerBuilder...OK\ngis.OLMapWidget > MapWidget uses passed-in base layer object directly...OK\ngis.OLMapWidget > initMapWidgetInSection initializes widgets and skips _prefix_...OK\n\n>> 75 tests completed in 164ms, with 0 failed, 0 skipped, and 0 todo.\n\nDone.\n",
+      "stderr": "",
+      "timed_out": false
+    }
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "python"
+  },
+  {
+    "step": "check_ci",
+    "result": true
+  },
+  {
+    "step": "pip_install",
+    "result": {
+      "cmd": "pip install -e . --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "ensure_pytest_available",
+    "result": {
+      "cmd": "pip install pytest --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "run_pytest",
+    "result": {
+      "cmd": "python -m pytest --tb=short -q",
+      "returncode": 0,
+      "stdout": "...................................................                      [100%]\n51 passed in 0.11s\n",
+      "stderr": "",
+      "timed_out": false
+    }
+  }
+]

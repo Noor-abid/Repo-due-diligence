@@ -1,0 +1,40 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "python"
+  },
+  {
+    "step": "check_ci",
+    "result": true
+  },
+  {
+    "step": "pip_install",
+    "result": {
+      "cmd": "pip install -e . --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "ensure_pytest_available",
+    "result": {
+      "cmd": "pip install pytest --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "run_pytest",
+    "result": {
+      "cmd": "python -m pytest --tb=short -q",
+      "returncode": 1,
+      "stdout": ".py::TestRequests::test_header_no_return_chars[invalid_header11]\nERROR tests/test_requests.py::TestRequests::test_header_no_return_chars[invalid_header12]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header0]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header1]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header2]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header3]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header4]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header5]\nERROR tests/test_requests.py::TestRequests::test_header_no_leading_space[invalid_header6]\nERROR tests/test_requests.py::TestRequests::test_header_with_subclass_types\nERROR tests/test_requests.py::TestRequests::test_can_send_objects_with_files[foo0]\nERROR tests/test_requests.py::TestRequests::test_can_send_objects_with_files[foo1]\nERROR tests/test_requests.py::TestRequests::test_can_send_objects_with_files[files2]\nERROR tests/test_requests.py::TestRequests::test_can_send_file_object_with_non_string_filename\nERROR tests/test_requests.py::TestRequests::test_autoset_header_values_are_native\nERROR tests/test_requests.py::TestRequests::test_auth_is_stripped_on_http_downgrade\nERROR tests/test_requests.py::TestRequests::test_auth_is_retained_for_redirect_on_host\nERROR tests/test_requests.py::TestRequests::test_manual_redirect_with_partial_body_read\nERROR tests/test_requests.py::TestRequests::test_getattr_proxy_stream_follows_redirect\nERROR tests/test_requests.py::TestRequests::test_redirect_with_wrong_gzipped_header\nERROR tests/test_requests.py::TestRequests::test_requests_history_is_saved\nERROR tests/test_requests.py::TestRequests::test_json_param_post_content_type_works\nERROR tests/test_requests.py::TestRequests::test_json_param_post_should_not_override_data_param\nERROR tests/test_requests.py::TestRequests::test_response_iter_lines\nERROR tests/test_requests.py::TestRequests::test_response_context_manager\nERROR tests/test_requests.py::TestRequests::test_unconsumed_session_response_closes_connection\nERROR tests/test_requests.py::TestRequests::test_response_json_when_content_is_None\nERROR tests/test_requests.py::TestRequests::test_empty_stream_with_auth_does_not_set_content_length_header\nERROR tests/test_requests.py::TestRequests::test_stream_with_auth_does_not_set_transfer_encoding_header\nERROR tests/test_requests.py::TestRequests::test_chunked_upload_does_not_set_content_length_header\nERROR tests/test_requests.py::TestRequests::test_custom_redirect_mixin\nERROR tests/test_requests.py::TestTimeout::test_stream_timeout\nERROR tests/test_requests.py::TestTimeout::test_invalid_timeout[timeout0-(connect, read)]\nERROR tests/test_requests.py::TestTimeout::test_invalid_timeout[foo-must be an int, float or None]\nERROR tests/test_requests.py::TestTimeout::test_none_timeout[None]\nERROR tests/test_requests.py::TestTimeout::test_none_timeout[timeout1]\nERROR tests/test_requests.py::TestTimeout::test_read_timeout[timeout0]\nERROR tests/test_requests.py::TestTimeout::test_read_timeout[timeout1]\nERROR tests/test_requests.py::TestTimeout::test_encoded_methods\nERROR tests/test_requests.py::test_requests_are_updated_each_time\nERROR tests/test_requests.py::test_urllib3_retries\nERROR tests/test_requests.py::test_urllib3_pool_connection_closed\nERROR tests/test_requests.py::TestPreparingURLs::test_redirecting_to_bad_url[http://:1-InvalidURL]\nERROR tests/test_requests.py::TestPreparingURLs::test_post_json_nan\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_compatibility\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_persists_doc_attr\nERROR tests/test_requests.py::test_content_length_for_bytes_data\nERROR tests/test_requests.py::test_content_length_for_string_data_counts_bytes\n414 passed, 15 skipped, 1 xfailed, 10 warnings, 205 errors in 39.48s\n",
+      "stderr": "",
+      "timed_out": false
+    }
+  }
+]

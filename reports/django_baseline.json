@@ -1,0 +1,8 @@
+{
+  "quality_score": 10,
+  "reasoning": "This repository contains the source code for Django, one of the most mature, robust, and widely-adopted Python web frameworks in existence. It exhibits exceptionally high engineering standards, complete with comprehensive testing suites, strict linting configurations, robust CI/CD tooling, and thorough documentation.",
+  "recommendation": "buy",
+  "repo_name": "django",
+  "method": "baseline_single_prompt",
+  "runtime_sec": 5.1
+}

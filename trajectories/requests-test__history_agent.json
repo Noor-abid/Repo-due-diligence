@@ -1,0 +1,13 @@
+[
+  {
+    "step": "git_log",
+    "returncode": 0
+  },
+  {
+    "step": "compute_stats",
+    "total_commits": 33,
+    "unique_authors": 11,
+    "top_author_share": 0.55,
+    "red_flag_count": 0
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "node"
+  },
+  {
+    "step": "check_ci",
+    "result": true
+  },
+  {
+    "step": "npm_install",
+    "result": {
+      "cmd": "npm install --silent",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "npm_test",
+    "result": {
+      "cmd": "npm test --silent",
+      "returncode": 0,
+      "stdout": "Running lodash tests.\ntest.js invoked with arguments: [\"/usr/local/bin/node\",\"/Users/noorfatimaabid/Downloads/repo-due-diligence/data/lodash/test/test\"]\nPlease wait.\nPlease wait..\nPlease wait...\nPlease wait.  \nPlease wait..\nPlease wait...\nPlease wait.  \nPlease wait..\nPlease wait...\nPlease wait.  \nPlease wait..\nPlease wait...\nPlease wait.  \nPlease wait..\n             \n----------------------------------------\n    PASS: 6831  FAIL: 0  TOTAL: 6831\n    Finished in 9604 milliseconds.\n----------------------------------------\nRunning lodash/fp tests.\n\n----------------------------------------\n    PASS: 327  FAIL: 0  TOTAL: 327\n    Finished in 54 milliseconds.\n----------------------------------------\n",
+      "stderr": "",
+      "timed_out": false
+    }
+  }
+]

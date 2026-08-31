@@ -1,0 +1,64 @@
+[
+  {
+    "step": "combine_findings",
+    "input": {
+      "code_and_tests": {
+        "project_type": "node",
+        "build": null,
+        "tests": {
+          "ran": true,
+          "passed": false,
+          "summary": ""
+        },
+        "has_ci": true,
+        "repo_name": "moment"
+      },
+      "git_history": {
+        "repo_name": "moment",
+        "total_commits": 33,
+        "unique_authors": 10,
+        "top_author_commit_share": 0.7,
+        "bus_factor_estimate": 1,
+        "last_commit_days_ago": 7,
+        "red_flag_commits_sample": [
+          "[bugfix] Revert changes made for #5269 due to webpack warnings"
+        ],
+        "red_flag_count": 1
+      },
+      "dependencies": {
+        "repo_name": "moment",
+        "ecosystem": "npm",
+        "vulnerabilities": {},
+        "stale_packages": []
+      }
+    }
+  },
+  {
+    "step": "generate_draft_report",
+    "result": {
+      "quality_score": 4,
+      "recommendation": "renegotiate",
+      "summary": "The repository exhibits a severe bus factor risk, with a single author responsible for 70% of the 33 total commits. Although dependency health is currently good with no known vulnerabilities or stale packages, the test suite is failing and builds are missing. Furthermore, recent commit history indicates unstable bug fixes that had to be reverted due to build warnings. Due to these stability and maintenance risks, the buyer should renegotiate terms before proceeding.",
+      "key_risks": [
+        "The project suffers from an extreme bus factor risk, as a single author accounts for 70% of all commits.",
+        "The automated test suite is currently failing, indicating broken functionality in the codebase.",
+        "Recent git history reveals unstable changes that had to be reverted due to webpack warnings."
+      ],
+      "requires_human_review": [
+        "Investigate why the test suite is failing and estimate the effort required to fix it.",
+        "Assess the project's dependency on the primary developer who holds 70% of the commit history."
+      ],
+      "repo_name": "moment",
+      "method": "agent_pipeline",
+      "verification_passed": true
+    }
+  },
+  {
+    "step": "verify_report",
+    "result": {
+      "all_claims_supported": true,
+      "unsupported_claims": [],
+      "notes": "All claims in the report\u2014including commit statistics (33 total commits, 70% top author, bus factor of 1), test suite status (ran=true, passed=false), CI presence, and red flag commit details\u2014match the raw findings accurately."
+    }
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "python"
+  },
+  {
+    "step": "check_ci",
+    "result": true
+  },
+  {
+    "step": "pip_install",
+    "result": {
+      "cmd": "pip install -e . --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "ensure_pytest_available",
+    "result": {
+      "cmd": "pip install pytest --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "run_pytest",
+    "result": {
+      "cmd": "python -m pytest --tb=short -q",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ERROR: usage: python -m pytest [options] [file_or_dir] [file_or_dir] [...]\npython -m pytest: error: unrecognized arguments: --asyncio-mode=strict\n  inifile: /Users/noorfatimaabid/Downloads/repo-due-diligence/data/tqdm/pyproject.toml\n  rootdir: /Users/noorfatimaabid/Downloads/repo-due-diligence/data/tqdm\n\n",
+      "timed_out": false
+    }
+  }
+]

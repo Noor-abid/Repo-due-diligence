@@ -1,0 +1,23 @@
+[
+  {
+    "step": "git_log",
+    "returncode": 0
+  },
+  {
+    "step": "git_tip_commit_date_check",
+    "raw_value": "2026-08-16T11:35:31-07:00"
+  },
+  {
+    "step": "date_discrepancy_detected",
+    "max_over_log": 1318,
+    "direct_tip_check": 14,
+    "resolution": "using direct tip check as authoritative"
+  },
+  {
+    "step": "compute_stats",
+    "total_commits": 33,
+    "unique_authors": 10,
+    "top_author_share": 0.55,
+    "red_flag_count": 1
+  }
+]

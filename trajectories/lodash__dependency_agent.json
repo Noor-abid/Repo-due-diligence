@@ -1,0 +1,10 @@
+[
+  {
+    "step": "npm_install",
+    "returncode": 0
+  },
+  {
+    "step": "npm_audit",
+    "returncode": 1
+  }
+]

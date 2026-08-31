@@ -1,0 +1,8 @@
+{
+  "quality_score": 3,
+  "reasoning": "The repository is for Moment.js, a widely used but officially deprecated and legacy project explicitly placed into maintenance mode with no new features accepted. While it has mature tooling and high historical download volume, its active development has ceased in favor of modern alternatives like Temporal, Date-fns, or Luxon. Purchasing this codebase holds very low strategic or commercial value for future product expansion.",
+  "recommendation": "walk away",
+  "repo_name": "moment",
+  "method": "baseline_single_prompt",
+  "runtime_sec": 3.7
+}

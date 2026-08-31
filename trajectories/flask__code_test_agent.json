@@ -1,0 +1,40 @@
+[
+  {
+    "step": "detect_project_type",
+    "result": "python"
+  },
+  {
+    "step": "check_ci",
+    "result": true
+  },
+  {
+    "step": "pip_install",
+    "result": {
+      "cmd": "pip install -e . --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "ensure_pytest_available",
+    "result": {
+      "cmd": "pip install pytest --break-system-packages -q",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.2.1\n[notice] To update, run: pip install --upgrade pip\n",
+      "timed_out": false
+    }
+  },
+  {
+    "step": "run_pytest",
+    "result": {
+      "cmd": "python -m pytest --tb=short -q",
+      "returncode": 1,
+      "stdout": "........................................................................ [ 14%]\n........................................................................ [ 29%]\n........................................................................ [ 44%]\n........................................ss.s............................ [ 59%]\n...................F.................................................... [ 74%]\n........................................................................ [ 88%]\n......................................................                   [100%]\n=================================== FAILURES ===================================\n________________________ TestStreaming.test_async_view _________________________\ntests/test_helpers.py:313: in test_async_view\n    client.get().close()\n    ^^^^^^^^^^^^\n../../venv/lib/python3.13/site-packages/werkzeug/test.py:1162: in get\n    return self.open(*args, **kw)\n           ^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/testing.py:235: in open\n    response = super().open(\n../../venv/lib/python3.13/site-packages/werkzeug/test.py:1116: in open\n    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../venv/lib/python3.13/site-packages/werkzeug/test.py:988: in run_wsgi_app\n    rv = run_wsgi_app(self.application, environ, buffered=buffered)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../venv/lib/python3.13/site-packages/werkzeug/test.py:1264: in run_wsgi_app\n    app_rv = app(environ, start_response)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1628: in __call__\n    return self.wsgi_app(environ, start_response)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1603: in wsgi_app\n    response = self.handle_exception(ctx, e)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1600: in wsgi_app\n    response = self.full_dispatch_request(ctx)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1021: in full_dispatch_request\n    rv = self.handle_user_exception(ctx, e)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1019: in full_dispatch_request\n    rv = self.dispatch_request(ctx)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:993: in dispatch_request\n    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1078: in ensure_sync\n    return self.async_to_sync(func)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nsrc/flask/app.py:1099: in async_to_sync\n    raise RuntimeError(\nE   RuntimeError: Install Flask with the 'async' extra in order to use async views.\n=========================== short test summary info ============================\nFAILED tests/test_helpers.py::TestStreaming::test_async_view - RuntimeError: ...\n1 failed, 482 passed, 4 skipped in 0.73s\n",
+      "stderr": "",
+      "timed_out": false
+    }
+  }
+]
