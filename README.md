@@ -1,73 +1,62 @@
 # Repo Due Diligence Agent
 
-## The Problem
+## Introduction
 
-**Who has this problem:** A buyer (company, investor, or acquirer) evaluating
-whether to purchase, license, or invest in a codebase they didn't write.
+Buying, licensing, or investing in a codebase you didn't build is a high-stakes 
+decision made on thin evidence. Today, that decision usually comes down to a 
+skim of the README, a glance at the star count, and a few hours of a senior 
+engineer's time — not a rigorous, repeatable assessment of what's actually 
+inside the repo.
 
-**The bottleneck:** Manual code due diligence takes a senior engineer days,
-requires reading unfamiliar code, running tests/builds, auditing dependencies,
-and mining git/PR history for risk signals (bus factor, review quality,
-technical debt). Different reviewers often reach inconsistent conclusions,
-which directly affects negotiated price and deal risk.
+This project builds an agentic pipeline that performs the due diligence a 
+careful human reviewer would do, but consistently, quickly, and with every 
+finding traceable back to evidence: test results, git history, and dependency 
+audits — not just a gut-feel score.
 
-**Why it's valuable to solve:** A consistent, evidence-backed report turns a
-subjective days-long manual review into a fast, repeatable, defensible
-process — giving the buyer real leverage in negotiation.
+## Who Has This Problem
 
-## The Solution
+The intended user is a **buyer** — a company, investor, or acquirer — 
+evaluating whether to purchase, license, or invest in a codebase they did not 
+write. This includes:
 
-A multi-agent pipeline that produces a buyer-facing **Due Diligence Report**
-(not just a score) for any given repository:
+- Acquirers doing technical due diligence before an M&A deal
+- Investors assessing a startup's core technical asset
+- Companies licensing or acquiring a private repository from another team
 
-| Agent | Job |
-|---|---|
-| Code & Test Agent | Clones repo, runs build/tests, reports pass/fail + coverage |
-| History Agent | Mines git log & PRs — bus factor, review depth, red flags |
-| Dependency Agent | Audits packages for outdated/vulnerable/unmaintained deps |
-| Synthesis Agent | Combines findings into a report, flags uncertainty, recommends human review of specific items |
+These buyers typically don't have deep familiarity with the codebase, and 
+often aren't equipped to independently verify its quality before negotiating 
+a price.
 
-**Baseline:** One direct prompt — "here's the repo, rate quality 1-10 and
-explain why" — no tools, no repo access beyond README.
+## The Bottleneck
 
-## Evaluation
+A README or working demo tells a buyer almost nothing about the actual 
+quality of the code underneath. To properly assess a repository, someone has 
+to:
 
-- 10 public repos, pre-ranked by us using a simple rubric (test health,
-  maintenance activity, dependency risk, architecture clarity)
-- Same 10 repos run through baseline and agent system
-- Primary metric: ranking correlation with our human ranking (e.g. Spearman)
-- Secondary: time & cost per repo
-- One adversarial "trap" repo included — looks clean, has hidden risk
+- Understand an unfamiliar codebase well enough to judge its architecture
+- Actually run the build and test suite, not just read about them
+- Audit dependencies for risk, staleness, or vulnerabilities
+- Mine git and PR history for signals like bus factor, review depth, and 
+  accumulated technical debt
 
-## Project Structure
+This is slow — often days of a senior engineer's time — and inconsistent: 
+two reviewers looking at the same evidence can reach different conclusions, 
+because there's no shared, repeatable method for weighing the signals. 
+Without that consistency, the resulting valuation depends on whoever happened 
+to review it, rather than on the codebase itself.
 
-```
-repo-due-diligence/
-├── README.md                  <- this file
-├── CHANGELOG.md                <- improvement changelog (required deliverable)
-├── agents/                     <- agent instructions/code
-│   ├── code_test_agent.py
-│   ├── history_agent.py
-│   ├── dependency_agent.py
-│   └── synthesis_agent.py
-├── baseline/                   <- single-prompt baseline
-│   └── baseline.py
-├── eval/                       <- evaluation harness + rubric
-│   ├── rubric.md
-│   ├── repos.json              <- the 10 test repos + human rankings
-│   └── run_eval.py
-├── data/                       <- cached repo clones / analysis artifacts
-├── reports/                    <- generated due-diligence reports (output)
-└── trajectories/               <- saved agent run logs (required deliverable)
-```
+## Why Solving It Is Valuable
 
-## Reproduction
+A consistent, evidence-backed due diligence report turns a subjective, 
+multi-day manual review into a fast, repeatable, and defensible process. For 
+the buyer, this means:
 
-See `eval/run_eval.py` for exact commands. Requires: Python 3.11+,
-`ANTHROPIC_API_KEY`, git, and network access to clone target repos.
-
-## Hot Take
-
-_(fill in after running experiments — e.g. "naive baselines over-trust
-README polish and star count as quality proxies; real risk lives in PR
-review depth and bus factor, which they completely miss.")_
+- **Speed** — hours instead of days to get a first-pass assessment
+- **Consistency** — the same rubric applied the same way every time, 
+  regardless of who's reviewing
+- **Leverage** — a documented, evidence-backed report strengthens the buyer's 
+  position in price negotiation
+- **Risk reduction** — hidden issues (thin test coverage, single-maintainer 
+  bus factor, unmaintained dependencies) surface before the deal closes, not 
+  afters in PR
+review depth and bus factor, which they completely miss."_
