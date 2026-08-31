@@ -12,9 +12,12 @@
 ## Bug Fix
 ![Before/after bug fix](./bug_fix_terminal.png)
 
+
 | Final | Combined pipeline: Code & Test + History (fixed) + Dependency + Synthesis-with-verification, run on all 10 repos after the bug fix | Baseline vs human ranking: Spearman correlation 0.83. Agent vs human ranking: Spearman correlation 0.37 (lower). See chart below | See "Hot Take" below — this result looks worse but is actually a stronger, more honest signal than it first appears |
 
+
 ![Baseline vs Agent scores per repo](./baseline_vs_agent_chart.png)
+
 
 ## Hot Take / Insight
 
