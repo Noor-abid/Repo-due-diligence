@@ -58,5 +58,4 @@ the buyer, this means:
   position in price negotiation
 - **Risk reduction** — hidden issues (thin test coverage, single-maintainer 
   bus factor, unmaintained dependencies) surface before the deal closes, not 
-  afters in PR
-review depth and bus factor, which they completely miss."_
+  after.
