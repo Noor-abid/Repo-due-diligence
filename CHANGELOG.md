@@ -8,6 +8,10 @@
 | Iteration 3 | Added History Agent — mines git log for bus factor, commit recency, red-flag commit messages | Initial run on `requests` reported "last commit 1,573 days ago" (~4.3 years) — factually wrong; requests had a release in May 2026 | Bug found via the pipeline's own verification step (see next row), not by manual review — this is itself a meaningful finding about the value of built-in verification |
 | Iteration 4 | Added Synthesis Agent with a verification pass — a second LLM call fact-checks the draft report against raw findings before it's returned | Verification correctly flagged `requests`' report as `verification_passed: false` due to the false "4 years inactive" claim | Kept and validated — the verification step caught a real, otherwise-invisible error before it could reach a buyer. This is the single most important design choice in the whole pipeline |
 | Bug fix | Root-caused the false "4 years inactive" claim: `max()` over all parsed commit timestamps in the shallow git log was corrupted, likely by requests' own documented "bad timezone" commit quirk (noted in their README's git clone instructions). Fixed by cross-checking against `git log -1 --format=%cI` (git's own direct answer for the tip commit date) and using it as authoritative when it disagrees with the log-parsing result by more than a couple days | Before fix: reported 1,573 days ago, `verification_passed: false`. After fix: correctly reports 6 days ago, `verification_passed: true` across all 10 repos | This is the strongest evidence-backed entry in the whole changelog — a real bug, caught by design, root-caused, and fixed |
+
+## Bug Fix
+![Before/after bug fix](./bug_fix_terminal.png)
+
 | Final | Combined pipeline: Code & Test + History (fixed) + Dependency + Synthesis-with-verification, run on all 10 repos after the bug fix | Baseline vs human ranking: Spearman correlation 0.83. Agent vs human ranking: Spearman correlation 0.37 (lower). See chart below | See "Hot Take" below — this result looks worse but is actually a stronger, more honest signal than it first appears |
 
 ![Baseline vs Agent scores per repo](./baseline_vs_agent_chart.png)
@@ -24,5 +28,4 @@ Our agent pipeline, by contrast, produced varied, evidence-grounded scores (3 to
 
 **Second, smaller lesson:** verification steps need to be paired with root-cause debugging, not just flagging. Our Synthesis Agent's verification pass correctly caught a false claim (requests wasn't "4 years inactive"), but catching the error alone wasn't enough — tracing it back to a specific git-timestamp parsing bug (tied to a known quirk in requests' own commit history) required engineering-level debugging beneath the LLM layer. After the fix, `verification_passed` returned `true` for all 10 repos in the final run — confirming the fix resolved the issue at its root, not just for the one repo where it was first noticed. AI-based fact-checking and tool-level debugging are complementary, not substitutes for each other.
 
-## Bug Fix
-![Before/after bug fix](./bug_fix_terminal.png)
+
