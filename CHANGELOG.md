@@ -13,6 +13,35 @@
 ![Before/after bug fix](./bug_fix_terminal.png)
 
 
+## Trap Case: flask-mail
+
+[#trap-case-flask-mail](#trap-case-flask-mail)
+
+`flask-mail` was the designated adversarial case in `eval/repos.json`
+(`is_trap: true`) — chosen because its surface signals suggest a safe buy
+while a real risk sits underneath.
+
+**Baseline verdict:** quality_score 9/10, recommendation "buy." Its reasoning
+cited `pyproject.toml`, `uv.lock`, pre-commit hooks, and membership in the
+Pallets Community Ecosystem as evidence of maturity — all signals visible
+from a README and file listing alone.
+
+**Agent verdict:** quality_score 7/10, recommendation "renegotiate." The
+History Agent found that a single author wrote 100% of the repo's 41
+commits (bus factor of 1) and that the last commit was 81 days old. The
+Code & Test Agent confirmed all 51 tests pass and dependencies are current
+— so the code itself is fine. The risk isn't code quality, it's who
+maintains it.
+
+**What this revealed:** professional tooling and ecosystem branding are
+signals of *style*, not of *bus factor*. A buyer relying on the baseline's
+"buy" recommendation would acquire a well-organized repo with a real
+single-point-of-failure risk they were never told about. This is the
+sharpest illustration in our evaluation set of why README-level review
+misses exactly the kind of risk that most affects a negotiated price —
+git history has to actually be mined, not inferred from polish.
+
+
 
 | Final | Combined pipeline: Code & Test + History (fixed) + Dependency + Synthesis-with-verification, run on all 10 repos after the bug fix | Baseline vs human ranking: Spearman correlation 0.83. Agent vs human ranking: Spearman correlation 0.37 (lower). See chart below | See "Hot Take" below — this result looks worse but is actually a stronger, more honest signal than it first appears |
 
