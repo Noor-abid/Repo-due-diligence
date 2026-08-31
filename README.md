@@ -140,35 +140,7 @@ repo-due-diligence/
 
 ## Reproduction
 
-**Requirements:** Python 3.13, a virtual environment, and a Gemini API key 
-set as an environment variable. Also requires `git` and network access to 
-clone target repositories.
-
-**Setup:**
-```bash
-git clone https://github.com/Noor-abid/Repo-due-diligence.git
-cd repo-due-diligence
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-export GEMINI_API_KEY=your_key_here
-```
-
-**Run the full evaluation (baseline + agent pipeline on all 10 repos):**
-```bash
-python eval/run_eval.py
-```
-
-**Expected output:** Per-repo baseline and agent scores printed to the 
-terminal, a JSON summary with Spearman correlation and runtime, and full 
-reports written to `reports/`.
-
-**Approximate runtime:** ~3.5s per repo for baseline, ~26-39s per repo for 
-the full agent pipeline (10 repos complete in a few minutes total).
-
-**Known issue:** Gemini free-tier rate limits (20 requests/day on some 
-models) can interrupt a full run mid-way — re-running resumes and completes 
-the remaining repos.
+See [REPRODUCTION.md](./REPRODUCTION.md)  for full setup and reproduction steps.
 
 ## Hot Take / Insight
 
